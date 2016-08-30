@@ -6,7 +6,12 @@
 
     <groupId>TeamE</groupId>
     <artifactId>AutomationFramework</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Generic</module>
+        <module>Calculator</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -20,8 +25,7 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>6.8</version>
-                <scope>test</scope>
+                <version>6.9.10</version>
             </dependency>
 
             <dependency>

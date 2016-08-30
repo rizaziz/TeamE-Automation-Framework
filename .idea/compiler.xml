@@ -22,10 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="TeamE-webbapp" />
+        <module name="Calculator" />
+        <module name="Generic" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Calculator" target="1.5" />
+      <module name="Generic" target="1.5" />
       <module name="TeamE-webbapp" target="1.5" />
     </bytecodeTargetLevel>
   </component>
