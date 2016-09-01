@@ -11,6 +11,7 @@
     <modules>
         <module>Generic</module>
         <module>Calculator</module>
+        <module>Google</module>
     </modules>
 
     <dependencyManagement>
@@ -20,6 +21,18 @@
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>
                 <version>3.0.0-beta2</version>
+            </dependency>
+
+            <!--dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>htmlunit-driver</artifactId>
+                <version>2.23</version>
+            </dependency-->
+
+            <dependency>
+                <groupId>net.sourceforge.htmlunit</groupId>
+                <artifactId>htmlunit</artifactId>
+                <version>2.23</version>
             </dependency>
 
             <dependency>

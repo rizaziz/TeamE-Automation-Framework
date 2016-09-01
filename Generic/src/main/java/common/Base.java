@@ -1,12 +1,16 @@
 package common;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.*;
 import org.testng.annotations.*;
+
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -20,23 +24,24 @@ public class Base {
 
     public WebDriver driver=null;
 
-    enum Browsers{IE,CHROME,FIREFOX,OPERA}
+    enum Browsers{HTMLUNIT,IE,CHROME,FIREFOX,OPERA}
 
     @Parameters({"useCloudEnv","userName","accessKey","os","browserName","browserVersion","url"})
-    @BeforeMethod
+    @BeforeClass
     public void setUp(@Optional("false") boolean useCloudEnv,
-                      @Optional("rahmanww") String userName,
+                      @Optional("riz_aziz2002") String userName,
                       @Optional("") String accessKey,
                       @Optional("Windows 8") String os,
-                      @Optional("firefox") String browser,
+                      @Optional("htmlunit") String browserName,
                       @Optional("34") String browserVersion,
                       @Optional("http://www.cnn.com") String url) throws IOException{
 
         if(useCloudEnv){
 
+            getCloudDriver(userName, accessKey, os, browserName, browserVersion);
 
         }else{
-            getLocalDriver(Browsers.valueOf(browser));
+            getLocalDriver(browserName);
         }
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -44,25 +49,26 @@ public class Base {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    @AfterClass
     public void cleanUp(){
         driver.quit();
     }
 
-    public WebDriver getLocalDriver(Browsers browser){
+    public WebDriver getLocalDriver(String browser){
         switch(browser){
-            case IE :
-                System.setProperty("webdriver.ie.driver", "./Generic/drivers/IEDriverServer.exe");
+            case  "internet explorer" :
+                System.setProperty("webdriver.ie.driver", "C:\\Users\\Aziz\\IdeaProjects\\TeamE-webbapp\\Generic\\drivers\\IEDriverServer.exe");
                 driver=new InternetExplorerDriver(); break;
-            case CHROME:
-                System.setProperty("webdriver.chrome.driver", "./Generic/drivers/chromedriver.exe");
+            case "chrome" :
+                System.setProperty("webdriver.chrome.driver", "C:\\Users\\Aziz\\IdeaProjects\\TeamE-webbapp\\Generic\\drivers\\chromedriver.exe");
                 driver=new ChromeDriver(); break;
-            case FIREFOX:
-                System.setProperty("webdriver.gecko.driver", "./Generic/drivers/geckodriver.exe");
+            case "firefox" :
+                System.setProperty("webdriver.gecko.driver", "C:\\Users\\Aziz\\IdeaProjects\\TeamE-webbapp\\Generic\\drivers\\geckodriver.exe");
                 driver=new FirefoxDriver(); break;
-            case OPERA:
-                System.setProperty("webdriver.opera.driver", "./Generic/drivers/operadriver.exe");
+            case "opera" :
+                System.setProperty("webdriver.opera.driver", "C:\\Users\\Aziz\\IdeaProjects\\TeamE-webbapp\\Generic\\drivers\\operadriver.exe");
                 driver=new OperaDriver(); break;
+            case "htmlunit" : driver=new HtmlUnitDriver();
         }
         return driver;
     }
@@ -84,6 +90,34 @@ public class Base {
         return driver;
     }
 
+    public WebElement getWebElement(String locatorType, String locator){
+
+        WebElement elem=null;
+        switch(locatorType){
+            case "id": elem=driver.findElement(By.id(locator)); break;
+            case "class": elem=driver.findElement(By.className(locator)); break;
+            case "name": elem=driver.findElement(By.name(locator)); break;
+            case "xpath": elem=driver.findElement(By.xpath(locator)); break;
+            case "css": elem=driver.findElement(By.cssSelector(locator)); break;
+        }
+
+        return elem;
+    }
+
+    public void fillInputField(WebElement elem, String value){
+        //WebElement elem=driver.findElement(By.id(locator));
+        elem.clear();
+        elem.sendKeys(value);
+    }
+
+    public void clickOnButton(WebElement elem){
+       elem.click();
+    }
+
+    public String getText(WebElement elem){
+        return elem.getText();
+    }
+
     public static void main(String[] args) throws Exception{
 
         /*Base b=new Base();
@@ -100,12 +134,5 @@ public class Base {
         }catch(MalformedURLException e){
             e.fillInStackTrace();
         }
-
-
-
-
     }
-
-
-
 }

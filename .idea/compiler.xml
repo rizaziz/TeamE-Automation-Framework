@@ -24,11 +24,13 @@
         <processorPath useClasspath="true" />
         <module name="Calculator" />
         <module name="Generic" />
+        <module name="Google" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Calculator" target="1.5" />
-      <module name="Generic" target="1.5" />
+      <module name="Calculator" target="1.7" />
+      <module name="Generic" target="1.7" />
+      <module name="Google" target="1.5" />
       <module name="TeamE-webbapp" target="1.5" />
     </bytecodeTargetLevel>
   </component>
