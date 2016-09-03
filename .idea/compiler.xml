@@ -23,16 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="Calculator" />
-        <module name="DollarTree" />
         <module name="Generic" />
-        <module name="Gmail" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Calculator" target="1.5" />
-      <module name="DollarTree" target="1.5" />
       <module name="Generic" target="1.5" />
-      <module name="Gmail" target="1.5" />
       <module name="TeamE-webbapp" target="1.5" />
     </bytecodeTargetLevel>
   </component>

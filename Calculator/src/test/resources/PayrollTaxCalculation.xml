@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TaxCalc" parallel="tests">
+
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="userName" value="riz_aziz2002"/>
+    <parameter name="accessKey" value="fdd30261-5557-40fc-b916-c049dd24ab2a"/>
+    <parameter name="os" value="Win8"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="46.0"/>
+    <parameter name="url" value="http://www.paycheckcity.com/"/>
+
+    <test name = "Google Search">
+        <classes>
+            <class name="results.TestingWebElements"/>
+            <class name="results.TestingSimleCalculator"/>
+        </classes>
+    </test>
+</suite>
