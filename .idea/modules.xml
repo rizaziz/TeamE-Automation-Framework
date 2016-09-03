@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Calculator/Calculator.iml" filepath="$PROJECT_DIR$/Calculator/Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DollarTree/DollarTree.iml" filepath="$PROJECT_DIR$/DollarTree/DollarTree.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generic/Generic.iml" filepath="$PROJECT_DIR$/Generic/Generic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gmail/Gmail.iml" filepath="$PROJECT_DIR$/Gmail/Gmail.iml" />
       <module fileurl="file://$PROJECT_DIR$/TeamE-webbapp.iml" filepath="$PROJECT_DIR$/TeamE-webbapp.iml" />
     </modules>
   </component>
