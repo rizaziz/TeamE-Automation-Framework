@@ -1,4 +1,4 @@
-package businesslogic;
+package testfixture;
 
 /**
  * Created by Aziz on 9/1/2016.

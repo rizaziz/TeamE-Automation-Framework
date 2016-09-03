@@ -1,4 +1,4 @@
-package util;
+package utilities;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -10,12 +10,11 @@ import java.text.ParseException;
  */
 public class Converter {
 
-    public static BigDecimal convert(String currency){
-        BigDecimal out=null;
+    public static double convert(String currency){
+        double out=0;
         NumberFormat format=NumberFormat.getCurrencyInstance();
         try{
-            out=new BigDecimal((Double)format.parse(currency))
-                    .setScale(2, RoundingMode.HALF_UP);
+            out=(Double)format.parse(currency);
         }catch(ParseException e){
             e.printStackTrace();
         }

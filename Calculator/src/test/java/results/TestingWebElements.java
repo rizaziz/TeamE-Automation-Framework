@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static businesslogic.FieldNames.*;
+import static testfixture.FieldNames.*;
 
 public class TestingWebElements extends Base {
 

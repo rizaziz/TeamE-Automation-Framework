@@ -24,7 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="Calculator" />
         <module name="Generic" />
-        <module name="Google" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

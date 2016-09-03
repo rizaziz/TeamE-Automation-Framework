@@ -1,20 +1,24 @@
-package businesslogic;
-
-import java.math.BigDecimal;
+package testfixture;
 
 /**
  * Created by Aziz on 9/1/2016.
  */
 public class OutputData {
 
-    private BigDecimal grossPay;
-    private BigDecimal federalWithholding;
-    private BigDecimal socialSecurity;
-    private BigDecimal medicare;
-    private BigDecimal stateTax;
-    private BigDecimal netPay;
+    private double grossPay;
+    private double federalWithholding;
+    private double socialSecurity;
+    private double medicare;
+    private double stateTax;
+    private double netPay;
 
-    public OutputData(BigDecimal grossPay, BigDecimal federalWithholding, BigDecimal socialSecurity, BigDecimal medicare, BigDecimal stateTax, BigDecimal netPay) {
+    public OutputData(double grossPay,
+                      double federalWithholding,
+                      double socialSecurity,
+                      double medicare,
+                      double stateTax,
+                      double netPay) {
+
         this.grossPay = grossPay;
         this.federalWithholding = federalWithholding;
         this.socialSecurity = socialSecurity;
@@ -23,51 +27,51 @@ public class OutputData {
         this.netPay = netPay;
     }
 
-    public BigDecimal getGrossPay() {
+    public double getGrossPay() {
         return grossPay;
     }
 
-    public void setGrossPay(BigDecimal grossPay) {
+    public void setGrossPay(double grossPay) {
         this.grossPay = grossPay;
     }
 
-    public BigDecimal getFederalWithholding() {
+    public double getFederalWithholding() {
         return federalWithholding;
     }
 
-    public void setFederalWithholding(BigDecimal federalWithholding) {
+    public void setFederalWithholding(double federalWithholding) {
         this.federalWithholding = federalWithholding;
     }
 
-    public BigDecimal getSocialSecurity() {
+    public double getSocialSecurity() {
         return socialSecurity;
     }
 
-    public void setSocialSecurity(BigDecimal socialSecurity) {
+    public void setSocialSecurity(double socialSecurity) {
         this.socialSecurity = socialSecurity;
     }
 
-    public BigDecimal getMedicare() {
+    public double getMedicare() {
         return medicare;
     }
 
-    public void setMedicare(BigDecimal medicare) {
+    public void setMedicare(double medicare) {
         this.medicare = medicare;
     }
 
-    public BigDecimal getStateTax() {
+    public double getStateTax() {
         return stateTax;
     }
 
-    public void setStateTax(BigDecimal stateTax) {
+    public void setStateTax(double stateTax) {
         this.stateTax = stateTax;
     }
 
-    public BigDecimal getNetPay() {
+    public double getNetPay() {
         return netPay;
     }
 
-    public void setNetPay(BigDecimal netPay) {
+    public void setNetPay(double netPay) {
         this.netPay = netPay;
     }
 

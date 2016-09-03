@@ -1,4 +1,4 @@
-package businesslogic;
+package testfixture;
 
 import org.openqa.selenium.WebElement;
 
@@ -11,13 +11,13 @@ public class InputData {
 
     private String checkDate;
     private String state;
-    private BigDecimal grossPay;
+    private double grossPay;
     private String grossPayType;
     private String payFrequency;
     private String federalFilingStatus="Single";
     private int numberOfAllowances=0;
 
-    public InputData(String checkDate, String state, BigDecimal grossPay,
+    public InputData(String checkDate, String state, double grossPay,
                      String grossPayType, String payFrequency,
                      String federalFilingStatus, int numberOfAllowances) {
         this.checkDate = checkDate;
@@ -46,11 +46,11 @@ public class InputData {
         this.state = state;
     }
 
-    public BigDecimal getGrossPay() {
+    public double getGrossPay() {
         return grossPay;
     }
 
-    public void setGrossPay(BigDecimal grossPay) {
+    public void setGrossPay(double grossPay) {
         this.grossPay = grossPay;
     }
 
